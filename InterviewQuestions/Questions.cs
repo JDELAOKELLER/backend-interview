@@ -129,36 +129,36 @@ namespace InterviewQuestions
       
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter which function you are testing, or 'Exit' to close: ");
-            Console.WriteLine("Palindrome");
-            Console.WriteLine("nthFib");
-            Console.WriteLine("Angle");
-            Console.WriteLine("Change");
-            Console.WriteLine("RomanNumeral");
+            Console.WriteLine("Please enter a number corresponding to which function you are testing, or 'Exit' to close: ");
+            Console.WriteLine("1. Palindrome");
+            Console.WriteLine("2. nthFib");
+            Console.WriteLine("3. Angle");
+            Console.WriteLine("4. Change");
+            Console.WriteLine("5. RomanNumeral");
             string functionInput = Console.ReadLine().ToLowerInvariant().Trim();
 
             while(functionInput != "exit" && functionInput != "'exit'")
             {
-                if (functionInput == "palindrome")
+                if (functionInput == "1")
                 {
                     Console.WriteLine("Please enter a test string for the isPalindrome function.");
                     var testPalindrome = Console.ReadLine();
                     Console.WriteLine(isPalindrome(testPalindrome));
                 }
-                else if (functionInput == "nthfib")
+                else if (functionInput == "2")
                 {
                     Console.WriteLine("Please enter a test integer for the nthFib function.");
                     var testInt = Int32.Parse(Console.ReadLine());
                     Console.WriteLine(nthFib(testInt));
                 }
-                else if (functionInput == "angle")
+                else if (functionInput == "3")
                 {
                     Console.WriteLine("Please enter two test integers for the angle function (one per line).");
                     var hourOne = Int32.Parse(Console.ReadLine());
                     var hourTwo = Int32.Parse(Console.ReadLine());
                     Console.WriteLine(computeAngleBetweenNumbersOnClock(hourOne, hourTwo));
                 }
-                else if (functionInput == "change")
+                else if (functionInput == "4")
                 {
                     Console.WriteLine("Please enter a dollar amount, followed by a cents amount (line separated) for the change function.");
                     var dollars = Int32.Parse(Console.ReadLine());
@@ -168,7 +168,7 @@ namespace InterviewQuestions
                     Console.WriteLine("3c: " + result[1]);
                     Console.WriteLine("4c: " + result[2]);
                 }
-                else if (functionInput == "romannumeral")
+                else if (functionInput == "5")
                 {
                     Console.WriteLine("Please enter a test string for the RomanNumeral function.");
                     var romanNumeral = Console.ReadLine();
