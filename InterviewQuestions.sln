@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewQuestions", "InterviewQuestions\InterviewQuestions.csproj", "{E79A7F92-4DE1-4912-B268-36F0AD0E655E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewQuestions", "InterviewQuestions\InterviewQuestions.csproj", "{E79A7F92-4DE1-4912-B268-36F0AD0E655E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewQuestionsTests", "InterviewQuestionsTests\InterviewQuestionsTests.csproj", "{EE8C369F-D4BF-4581-BCFB-E12BE931A564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewQuestionsTests", "InterviewQuestionsTests\InterviewQuestionsTests.csproj", "{EE8C369F-D4BF-4581-BCFB-E12BE931A564}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
