@@ -48,7 +48,7 @@ namespace InterviewQuestions
         /* The inputs are two numbers on a standard clock face, from 1 to 12.
          *
          * Return the clockwise angle, in degrees, from num1 to num2.
-         * Each step between adjacent numbers is 30 degrees.
+         * Calculate the angle for each step between adjacent numbers.  
          *
          * Rules:
          *      If num1 and num2 are the same, return 0.
