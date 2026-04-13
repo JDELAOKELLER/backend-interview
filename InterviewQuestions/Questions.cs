@@ -8,64 +8,81 @@ namespace InterviewQuestions
 {
     public class Questions
     {
-        /* isPalindrome takes in a string and must return true if the string is a palindrome 
-         * and return false if the string is not a palindrome
-         * 
-         * A Palidrome is a string that is read the same forwards and backwards
-         * 
-         * Examples: 
-         *          "madam" is a palindrome 
-         *          "david" is NOT a palidrome
-         * 
-         * Note: For this question assume empty strings and 1 character strings are palindromes  
+        /* Return true if candidate reads the same left-to-right and right-to-left.
+         * Otherwise return false.
+         *
+         * Treat the string exactly as given. You do not need to ignore spaces,
+         * punctuation, or letter casing.
+         *
+         * Examples:
+         *      "madam" -> true
+         *      "david" -> false
+         *      "" -> true
+         *      "a" -> true
          */
         public static bool isPalindrome(string candidate) 
         {    
             return true; 
         }
 
-        /* nthFib takes in an integer n and must return the nth number of the fibonacci sequence
-         * 
-         * The fibonacci sequence is defined as the sum of the previous two terms in the series,
-         * with the first two terms being fib(0) = 0 and fib(1) = 1
-         * 
-         * The first few numbers of the fibonacci sequence are
-         * 0, 1, 1, 2, 3, 5, 8, ...
-         * 
+        /* Return the nth Fibonacci number.
+         * The sequence is defined as the sum of the previous two terms in the series.
+         *
+         * Use this definition:
+         *      fib(0) = 0
+         *      fib(1) = 1
+         *      fib(n) = fib(n - 1) + fib(n - 2) for n >= 2
+         *
+         * Examples:
+         *      nthFib(0) -> 0
+         *      nthFib(1) -> 1
+         *      nthFib(2) -> 1
+         *      nthFib(3) -> 2
+         *      nthFib(7) -> 13
          */
         public static int nthFib(int n)
         {
             return 1; 
         }
 
-        /* computeAngleBetweenNumbersOnClock takes in two integers which represent numbers
-         * on a clock face and must return the degree value of the angle inbetween the two numbers
-         * 
-         * For example:
-         *      computeAngleBetweenNumbersOnClock(12, 3) would return 90
-         *      computeAngleBetweenNumbersOnClock(12, 6) would return 180 
-         * 
-         * Note: The angle should be measured clockwise from the first number. 
-         *       If num1 equals num2 then the function should return 0 (not 360)
-         *       0 will not be given as an input, this will be 12. 
+        /* The inputs are two numbers on a standard clock face, from 1 to 12.
+         *
+         * Return the clockwise angle, in degrees, from num1 to num2.
+         * Each step between adjacent numbers is 30 degrees.
+         *
+         * Rules:
+         *      If num1 and num2 are the same, return 0.
+         *      Measure only clockwise, not the smaller of the two angles.
+         *      Treat 12 as the top of the clock. The input will never be 0.
+         *
+         * Examples:
+         *      computeAngleBetweenNumbersOnClock(12, 3) -> 90
+         *      computeAngleBetweenNumbersOnClock(12, 6) -> 180
+         *      computeAngleBetweenNumbersOnClock(2, 1) -> 330
          */
         public static int computeAngleBetweenNumbersOnClock(int num1, int num2)
         {
             return 1; 
         }
 
-        /* calculateChange takes two integers, a dollar amount and a cents amount and must return
-         * answer which is an array containing the minimal amount of coins that gives correct change. 
-         * But there is a catch! Coin demonimations have been refactored and the only coins you have
-         * available are 2 cent, 3 cent, and 4 cent coins. 
-         * 
-         * The answer array should be formatted so that the value at index 0 is the number
-         * of 2 cent coins, the value at index 1 is the number of 3 cent coins, and the value at index
-         * 2 is the number of 4 cent coins. 
-         * 
-         * For example:
-         *      calculateChange(0, 40) would return an array [0][0][10]
-         *      calculateChange(1, 10) would return an array [1][0][27]
+        /* Convert the input amount into the fewest total number of coins using
+         * only 2-cent, 3-cent, and 4-cent coins.
+         *
+         * The inputs are dollars and cents. First convert them to a total number
+         * of cents.
+         *
+         * Return an array of length 3:
+         *      index 0 = number of 2-cent coins
+         *      index 1 = number of 3-cent coins
+         *      index 2 = number of 4-cent coins
+         *
+         * If multiple combinations make the same amount, choose the one that
+         * uses the fewest coins.
+         *
+         * Examples:
+         *      calculateChange(0, 40) -> [0, 0, 10]
+         *      calculateChange(1, 10) -> [1, 0, 27]
+         *      calculateChange(0, 33) -> [1, 1, 7]
          */ 
         public static int[] calculateChange(int dollars, int cents)
         {
@@ -73,58 +90,43 @@ namespace InterviewQuestions
             return answer;
         }
 
-        /* romanNumeraltoNumber takes in a string which represents a roman numeral and must return 
-         * the corresponding decimal value of the number. 
-         * 
-         * Note: We are limiting values to < 150 and all inputs will be capitalized
-         * 
-         * Roman Numerals:
+        /* Convert a valid Roman numeral into its integer value.
+         *
+         * The input will be uppercase and represent a value less than 150.
+         *
+         * Symbol values:
          *      I = 1
          *      V = 5
          *      X = 10
          *      L = 50
          *      C = 100
-         * 
-         *  The outputs must follow the following rules: 
-         *  2. If one or more letters are placed after another letter of greater value, add that amount
-         *     VI = 6 (5 + 1 = 6)
-         *     LXX = 70 (50 + 10 + 10 = 70)
-         *  3. If a letter is placed before another letter of greater value, subtract that amount
-         *     IV = 4 (5 - 1 = 4)
-         *     XC = 90 (100 - 10 = 90)
-         *     
-         *  The test inputs will be constrained to the following rules about Roman Numerals: 
-         *  1. A letter repeats its value that many times (XXX = 30, III = 3, etc) and a letter can only
-         *     be repeated 3 times
-         *     
-         *  2. There are 3 sub rules about subtracting roman numerals
-         *      a. Only powers of 10 can be subtracted (I, X, or C but not V or L)
-         *          95 = XCV ((100 - 10) + 5 = 95)  
-         *          The input WILL NOT contain VC (100 - 5)  
-         *      b.  At most, one number will be subtracted in a row 
-         *          13 = XIII (10 + 1 + 1 + 1 = 13) 
-         *          The input WILL NOT contain IIXV (15 - 1 - 1)
-         *          The input WILL NOT contain IVX (15 - 5 - 1) or (15 - (5 - 1))
-         *      c. A number will not be subtracted a number from one that is more than 10 times greater 
-         *         That is you can subtract 1 from 10 but not 1 from 20
-         *         99 = XCIX (90 + 9 = 99)
-         *         The input WILL NOT contain IC (100 - 1) 
-         * 
+         *
+         * Read the numeral from left to right:
+         *      If a symbol is smaller than the symbol after it, subtract it.
+         *      Otherwise, add it.
+         *
+         * You may assume the input is a valid Roman numeral under the rules
+         * used in this exercise.
+         *
+         * Examples:
+         *      "V" -> 5
+         *      "XVII" -> 17
+         *      "XCIV" -> 94
+         *      "CXLIV" -> 144
          */
         public static int romanNumeraltoNumber(string romanNumeral) 
         {
             return 1; 
         }
 
-        /* This is the main function which you can use to test your functions. Run the program
-         * and enter one of the following commands to test any one function.
-         *      
-         * Where function tag is one of the following:
-         *      Palindrome for isPalindrome function 
-         *      nthFib for nthFib function 
-         *      Angle for computeAngleBetweenNumbersOnClock function
-         *      Change for calculateChange function 
-         *      RomanNumeral for romanNumeraltoNumber function
+        /* This is the main function you can use to test your work manually.
+         * Run the program and enter one of the following numbers:
+         *
+         *      1 for isPalindrome
+         *      2 for nthFib
+         *      3 for computeAngleBetweenNumbersOnClock
+         *      4 for calculateChange
+         *      5 for romanNumeraltoNumber
          */
       
         static void Main(string[] args)
